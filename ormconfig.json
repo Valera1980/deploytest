@@ -6,13 +6,17 @@
     "password": "postgres",
     "database": "products",
     "entities": [
-        "dist/**/*.entity{.ts,.js}"
+        "dist/db/*entity.js"
     ],
-    "synchronize": true,
+    "synchronize": "false",
     "migrations": [
-        "src/db/migrations/*.js"
+        "dist/db/migration/*.js"
+    ],
+    "subscribers": [
+        "src/subscriber/**/*.ts"
     ],
     "cli": {
-        "migrationsDir": "src/db/migration"
+        "migrationsDir": "src/db/migration",
+        "subscribersDir": "src/subscriber"
     }
 }

@@ -1,4 +1,5 @@
 import { Controller, Get, Param, Post } from '@nestjs/common';
+import { Product } from 'src/db/product-entity';
 import { ProductService } from 'src/db/product-repo';
 
 @Controller('food')
@@ -9,12 +10,14 @@ export class FoodController {
   //   return 'New entity found with ' + id;
   // }
   @Get('/all')
-  async find(): Promise<number> {
-    const users = await this._product.findAll();
-    return users.length;
+  async find(): Promise<Product[]> {
+    const products = await this._product.findAll();
+    return products;
   }
   @Post()
-  create(): string {
+  async create(): Promise<any> {
+    const ppp = await this._product.create(new Product('aaa', 120, 'oooo'));
+    console.log(ppp);
     return 'Instance is created';
   }
 }

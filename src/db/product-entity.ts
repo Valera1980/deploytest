@@ -11,6 +11,15 @@ export class Product {
   @Column()
   weight: number;
 
-  @Column()
+  @Column({ nullable: true })
   comment: string;
+
+  @Column({ nullable: true })
+  message: string;
+
+  constructor(name: string, weight: number, comment: string) {
+    this.name = name;
+    this.weight = weight;
+    this.comment = comment;
+  }
 }

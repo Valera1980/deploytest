@@ -11,4 +11,8 @@ export class ProductService {
   findAll(): Promise<Product[]> {
     return this._productRepo.find();
   }
+  async create(model: Product): Promise<any> {
+    const ddd = this._productRepo.create(model);
+    return await this._productRepo.save(ddd);
+  }
 }
