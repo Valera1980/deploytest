@@ -54,7 +54,7 @@ jobs:
         env:
           # postgress password is required; alternatively, you can run:
           # `PGPASSWORD=postgres_password psql ...`
-          PGPASSWORD: postgres_password
+          PGPASSWORD: "postgres"
  build:
     runs-on: ubuntu-latest
     strategy:
