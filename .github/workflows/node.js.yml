@@ -64,6 +64,17 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+          steps:
+          - checkout
+          - run: sudo apt-get update
+          - run: sudo apt-get install postgresql-client
+          - run:
+              name: Setup DB
+              working_directory: ./test/data
+              environment:
+                TERM: xterm
+              command: psql -q -d $CI_DATABASE_URL -f your_seed_data.sql
+          
 
 
       
