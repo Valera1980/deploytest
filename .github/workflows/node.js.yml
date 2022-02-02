@@ -50,7 +50,7 @@ jobs:
 
       # queries database with postgres client
       - name: Query database
-        run: psql -h localhost -d "products" -U "postgres" -c 'SELECT 1;'
+        run: psql -h postgres -d "products" -U "postgres" -c 'SELECT 1;'
         env:
           # postgress password is required; alternatively, you can run:
           # `PGPASSWORD=postgres_password psql ...`
