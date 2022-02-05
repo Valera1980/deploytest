@@ -20,6 +20,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
+      env: 
+         TYPEORM_URL: ${{secrets.TYPEORM_URL}}
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
@@ -36,6 +38,7 @@ jobs:
            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
            heroku_app_name: "nestjsdeployapp"
            heroku_email: "gavrilow777@gmail.com"
+           TYPEORM_URL: ${{secrets.TYPEORM_URL}}
   
 
           
