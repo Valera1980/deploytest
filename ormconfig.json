@@ -1,6 +1,5 @@
 {
     "type": "postgres",
-    "url": "process.ENV.TYPEORM_URL",
     "entities": [
         "dist/db/*entity.js"
     ],

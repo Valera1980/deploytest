@@ -15,6 +15,7 @@ import { ConfigModule } from '@nestjs/config';
       useFactory: async () =>
         Object.assign(await getConnectionOptions(), {
           autoLoadEntities: true,
+          url: process.env.TYPEORM_URL,
         }),
     }),
     ConfigModule.forRoot(),
