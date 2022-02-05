@@ -13,5 +13,8 @@
     "cli": {
         "migrationsDir": "src/db/migration",
         "subscribersDir": "src/subscriber"
+    },
+    "ssl": {
+        "rejectUnauthorized": false
     }
 }
